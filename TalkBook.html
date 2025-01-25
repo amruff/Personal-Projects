@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkBook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #bde0fe, #a2d2ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #6c91c2;
+            color: white;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            flex-grow: 1;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #495057;
+            text-align: center;
+        }
+
+        .card:nth-child(odd) {
+            background-color: #e4f0f6;
+        }
+
+        .card:nth-child(even) {
+            background-color: #d7e3fc;
+        }
+
+        footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #6c91c2;
+            color: white;
+            width: 100%;
+        }
+
+        footer a {
+            color: #e3f2fd;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'en-US';
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>TalkBook</h1>
+        <p>Click on a button to hear the phrase!</p>
+    </div>
+
+    <div class="grid">
+        <div class="card" onclick="speak('Hello')">
+            <p>Hello</p>
+        </div>
+        <div class="card" onclick="speak('Thank you')">
+            <p>Thank You</p>
+        </div>
+        <div class="card" onclick="speak('I need help')">
+            <p>I Need Help</p>
+        </div>
+        <div class="card" onclick="speak('I am hungry')">
+            <p>I Am Hungry</p>
+        </div>
+        <div class="card" onclick="speak('I am thirsty')">
+            <p>I Am Thirsty</p>
+        </div>
+        <div class="card" onclick="speak('I am tired')">
+            <p>I Am Tired</p>
+        </div>
+        <div class="card" onclick="speak('I need a break')">
+            <p>I Need a Break</p>
+        </div>
+        <div class="card" onclick="speak('I want to play')">
+            <p>I Want to Play</p>
+        </div>
+        <div class="card" onclick="speak('I feel happy')">
+            <p>I Feel Happy</p>
+        </div>
+        <div class="card" onclick="speak('I feel sad')">
+            <p>I Feel Sad</p>
+        </div>
+        <div class="card" onclick="speak('I feel excited')">
+            <p>I Feel Excited</p>
+        </div>
+        <div class="card" onclick="speak('Yes')">
+            <p>Yes</p>
+        </div>
+        <div class="card" onclick="speak('No')">
+            <p>No</p>
+        </div>
+        <div class="card" onclick="speak('I love you')">
+            <p>I Love You</p>
+        </div>
+        <div class="card" onclick="speak('Please')">
+            <p>Please</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TalkBook. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
